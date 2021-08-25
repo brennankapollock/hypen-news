@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from '../../components/Nav'
 
 
 export const getServerSideProps = async pageContext => {
@@ -34,11 +35,9 @@ export const getServerSideProps = async pageContext => {
 }
 
 export default function Feed({pageNumber, articles}) {
-    console.log(pageNumber)
-    console.log(articles);
     return (
-        <div className="my-8 mx-1 lg:mx-2 lg:px-12  py-auto px-auto flex flex-col font-mono" >
-            
+        <div className="my-8 mx-1 lg:mx-2 lg:px-12 flex flex-col font-mono" >
+            <Nav/>
             {articles.map((article, index) => (
                 <div key={index} className="py-8 m-4 px-6  content-center" >
                     <a href={article.url}> <h1 className="text-black hover:text-blue-400 text-center text-xl font-bold">{article.title}</h1>  </a>
